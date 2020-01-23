@@ -24,7 +24,7 @@ This package contains a module for prime number checking and generation, and a m
 ### Create and activate a virtual environment
 
 ```bash
-~/skhub$ python -m venv .
+~/skhub$ python -m venv venv
 ~/skhub$ source venv/bin/activate
 ```
 
@@ -53,11 +53,22 @@ This package contains a module for prime number checking and generation, and a m
 0 0 0 1
 ```
 
+### Use `print_matrix` script to print a certain matrix on the console
+
+```bash
+(venv) ~/skhub$ chmod u+x print_matrix.py
+(venv) ~/skhub$ ./print_matrix.py 3
+4 5 7
+5 6 8
+7 8 10
+```
+
+
 ## Roadmap
 
 1.  ~~Implement code to generate `n` prime numbers.~~
 1.  ~~Implement code to print a matrix on the console.~~
-1.  Calculate timings for prime number generation code with inputs of different orders of magnitude.
+1.  ~~Implement code to print a matrix on the console in which every element of the matrix is given by x-th plus y-th prime number.~~
 
 
 ## Contributing
@@ -72,7 +83,7 @@ This package contains a module for prime number checking and generation, and a m
 
 ### Improvement ideas
 
--   Implement more efficient algorithms for `prime` module.
+-   Calculate timings for prime number generation code with inputs of different orders of magnitude, and based on the results, verify if more efficient algorithms should be used.
 -   Build distribution archives and deploy package to the Package Index.
 
 

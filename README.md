@@ -80,6 +80,7 @@ This package contains a module for prime number checking and generation, and a m
 
 ### Improvement ideas
 
+-   Stress test the inputs for implemented functions using [hypothesis](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python).
 -   Calculate timings for prime number generation code with inputs of different orders of magnitude, and based on the results, verify if more efficient algorithms should be used.
 -   Build distribution archives and deploy package to the Package Index.
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module implements a function to print square matrices on the console. 
+This module implements a function to print square matrices on the console.
 """
 
 

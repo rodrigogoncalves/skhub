@@ -28,16 +28,15 @@ This package contains a module for prime number checking and generation, and a m
 ~/skhub$ source venv/bin/activate
 ```
 
-### Make sure `prime.py` has the execution bit set
+### Make sure python files have the execution bit set for testing
 
 ```bash
-(venv) ~/skhub$ chmod u+x algorithm/prime.py
+(venv) ~/skhub$ chmod u+x {algorithm/prime.py,display/console.py,prime_matrix.py}
 ```
 
 ### Use `get_n_primes` to retrieve a list of prime numbers up to `n`
 
 ```bash
-(venv) ~/skhub$ chmod u+x algorithm/prime.py
 (venv) ~/skhub$ ./algorithm/prime.py 10
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 ```
@@ -45,7 +44,6 @@ This package contains a module for prime number checking and generation, and a m
 ### Use `print_square_matrix` to print a matrix on the console
 
 ```bash
-(venv) ~/skhub$ chmod u+x display/console.py
 (venv) ~/skhub$ ./display/console.py 4
 1 0 0 0
 0 1 0 0
@@ -56,7 +54,6 @@ This package contains a module for prime number checking and generation, and a m
 ### Use `print_matrix` script to print a certain matrix on the console
 
 ```bash
-(venv) ~/skhub$ chmod u+x print_matrix.py
 (venv) ~/skhub$ ./print_matrix.py 3
 4 5 7
 5 6 8

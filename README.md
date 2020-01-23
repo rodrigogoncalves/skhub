@@ -28,7 +28,7 @@ This package contains a module for prime number checking and generation, and a m
 ~/skhub$ source venv/bin/activate
 ```
 
-### Make sure `prime.py` has execution bit set
+### Make sure `prime.py` has the execution bit set
 
 ```bash
 (venv) ~/skhub$ chmod u+x algorithm/prime.py
@@ -42,11 +42,21 @@ This package contains a module for prime number checking and generation, and a m
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 ```
 
+### Use `print_square_matrix` to print a matrix on the console
+
+```bash
+(venv) ~/skhub$ chmod u+x display/console.py
+(venv) ~/skhub$ ./display/console.py 4
+1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1
+```
 
 ## Roadmap
 
 1.  ~~Implement code to generate `n` prime numbers.~~
-1.  Implement code to print a matrix on the console.
+1.  ~~Implement code to print a matrix on the console.~~
 1.  Calculate timings for prime number generation code with inputs of different orders of magnitude.
 
 

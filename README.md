@@ -66,6 +66,9 @@ This package contains a module for prime number checking and generation, and a m
 
 -   Try to follow PEP conventions as much as possible (i.e.: use non-opinionated tools like [pycodestyle](https://github.com/PyCQA/pycodestyle)).
 -   Try to have all code documented with docstrings and doctest. It takes literally a couple of minutes to type them and that pays off in the long run. Not because you wrote it you will always remember how to use it.
+-   Try to maintain a stable interface for users between commits.
+-   Try to avoid the usage of third-party as much as possible, so the chances of incurring into technical debt are mitigated.
+
 
 ### Improvement ideas
 

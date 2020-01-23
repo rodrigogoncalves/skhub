@@ -51,10 +51,10 @@ This package contains a module for prime number checking and generation, and a m
 0 0 0 1
 ```
 
-### Use `print_matrix` script to print a certain matrix on the console
+### Use `prime_matrix` script to print on the console a x-th plus y-th prime numbers matrix for every matrix element (x, y)
 
 ```bash
-(venv) ~/skhub$ ./print_matrix.py 3
+(venv) ~/skhub$ ./prime_matrix.py 3
 4 5 7
 5 6 8
 7 8 10

@@ -92,6 +92,10 @@ def get_n_primes(n):
         >>> get_n_primes(10)
         [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 
+        >>> get_n_primes(20) # doctest: +NORMALIZE_WHITESPACE
+        [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,
+        67, 71]
+
         >>> get_n_primes(3.0)
         [2, 3, 5]
 
@@ -106,14 +110,16 @@ def get_n_primes(n):
 
     primes = []
     n = int(n)
-    idx = 2
 
-    while len(primes) < n:
-        for i in count(idx):
-            if is_prime(i):
-                primes.append(i)
-                idx = i+1
-                break
+    if n >= 1:
+        primes.append(2)
+
+    # Skip even numbers to cut execution time by half
+    for i in count(3, 2):
+        if len(primes) == n:
+            break
+        if is_prime(i):
+            primes.append(i)
 
     return primes
 

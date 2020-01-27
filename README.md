@@ -9,6 +9,7 @@ The `matrix` module contains a factory function for generating matrices of a giv
 ## TOC
 
 -   [Usage](#usage)
+-   [Customization](#customization)
 -   [Contributing](#contributing)
 -   [License](#license)
 
@@ -37,7 +38,7 @@ The `matrix` module contains a factory function for generating matrices of a giv
 
 ### Use the package to generate some matrices and print them on the console
 
-```
+```bash
 >>> from skhub.matrix import matrix_factory, N_of_x_plus_N_of_y
 >>> from skhub.numbers import prime
 >>> m = matrix_factory(10, 20, prime, N_of_x_plus_N_of_y)
@@ -64,6 +65,38 @@ The `matrix` module contains a factory function for generating matrices of a giv
   13   14   14   15   16   18   21   26   34   47   68  102  157  246  390  623 1000 1610 2597 4194
   21   22   22   23   24   26   29   34   42   55   76  110  165  254  398  631 1008 1618 2605 4202
   34   35   35   36   37   39   42   47   55   68   89  123  178  267  411  644 1021 1631 2618 4215
+```
+
+
+## Customization
+
+### Custom formulas
+
+Implementing a custom formula is as simple as subclassing Formula class and implementing the logic for building the correct sequence of numbers in its constructor, and the getter for an element:
+
+```bash
+>>> from skhub.numbers import *
+>>> from skhub.matrix import *
+>>> class MyFormula(Formula):
+...     def __init__(self, m, n, number_generator):
+...         super().__init__(m, n, number_generator)
+...         self.numbers = list(islice(number_generator(), 0, m*n+3))
+...     def get(self, x, y):
+...         super().get(x, y)
+...         return self.numbers[x*y+30]
+...
+>>> m = matrix_factory(10, 20, prime, MyFormula)
+>>> m.print(pretty=True)
+ 127  127  127  127  127  127  127  127  127  127  127  127  127  127  127  127  127  127  127  127
+ 127  131  137  139  149  151  157  163  167  173  179  181  191  193  197  199  211  223  227  229
+ 127  137  149  157  167  179  191  197  211  227  233  241  257  269  277  283  307  313  331  347
+ 127  139  157  173  191  199  227  239  257  271  283  311  331  349  367  383  401  421  439  457
+ 127  149  167  191  211  233  257  277  307  331  353  379  401  431  449  467  499  523  563  587
+ 127  151  179  199  233  263  283  317  353  383  419  443  467  503  547  577  607  641  661  701
+ 127  157  191  227  257  283  331  367  401  439  467  509  563  599  631  661  709  751  797  829
+ 127  163  197  239  277  317  367  409  449  491  547  593  631  673  727  769  823  863  919  971
+ 127  167  211  257  307  353  401  449  499  563  607  653  709  761  823  877  937  991 1039 1093
+ 127  173  227  271  331  383  439  491  563  613  661  733  797  857  919  983 1039 1097 1171 1231
 ```
 
 

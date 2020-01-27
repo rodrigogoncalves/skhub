@@ -23,11 +23,12 @@ The `matrix` module contains a factory function for generating matrices of a giv
 ~$ cd skhub
 ```
 
-### Create and activate a virtual environment
+### Create and activate a virtual environment, and install dependencies
 
 ```bash
 ~/skhub$ python -m venv venv
 ~/skhub$ source venv/bin/activate
+~/skhub$ pip install -r requirements.txt
 ```
 
 ### Run tests

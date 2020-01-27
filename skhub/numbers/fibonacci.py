@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
 This module implements a generator for fibonacci numbers.
+
+The iterator starts with 0.
 """
 
 from itertools import count
@@ -10,6 +12,8 @@ def fibonacci_generator():
     """
     An iterator that generates fibonacci numbers by using a cache table with
     previous fibonacci numbers.
+
+    The iterator starts with 0.
     """
 
     yield 0

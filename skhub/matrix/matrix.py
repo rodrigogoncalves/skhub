@@ -11,6 +11,23 @@ can be used to control cell width in order to print matrices in a way that is
 easier to visualize by humans.
 """
 
+from abc import ABC, abstractmethod
+
+
+class Formula(ABC):
+    """
+    An abstract base class that represents a matrix formula.
+    """
+
+    @abstractmethod
+    def __init__(self, m, n, number_generator):
+        self.m, self.n = m, n
+
+    @abstractmethod
+    def get(self, x, y):
+        if x >= self.m or y >= self.n:
+            raise IndexError("matrix index out of range")
+
 
 class Matrix:
     """

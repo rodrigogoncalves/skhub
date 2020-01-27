@@ -13,38 +13,46 @@ knowing the numbers it needs to generate in order to perform its calculations.
 
 from itertools import islice
 
+from skhub.matrix import Formula
 
-class N_of_x_plus_N_of_y:
+
+class N_of_x_plus_N_of_y(Formula):
     """
     A formula class that generates the element (x, y) by N(x) + N(y).
     """
 
     def __init__(self, m, n, number_generator):
+        super().__init__(m, n, number_generator)
         self.numbers = list(islice(number_generator(), 0, max(m, n)))
 
     def get(self, x, y):
+        super().get(x, y)
         return self.numbers[x] + self.numbers[y]
 
 
-class N_of_x_times_N_of_y:
+class N_of_x_times_N_of_y(Formula):
     """
     A formula class that generates the element (x, y) by N(x) * N(y).
     """
 
     def __init__(self, m, n, number_generator):
+        super().__init__(m, n, number_generator)
         self.numbers = list(islice(number_generator(), 0, max(m, n)))
 
     def get(self, x, y):
+        super().get(x, y)
         return self.numbers[x] * self.numbers[y]
 
 
-class N_of_x_plus_y_plus_1:
+class N_of_x_plus_y_plus_1(Formula):
     """
     A formula class that generates the element (x, y) by N(x + y + 1).
     """
 
     def __init__(self, m, n, number_generator):
+        super().__init__(m, n, number_generator)
         self.numbers = list(islice(number_generator(), 0, m+n+1))
 
     def get(self, x, y):
+        super().get(x, y)
         return self.numbers[x+y+1]

@@ -28,7 +28,7 @@ The `matrix` module contains a factory function for generating matrices of a giv
 ```bash
 ~/skhub$ python -m venv venv
 ~/skhub$ source venv/bin/activate
-~/skhub$ pip install -r requirements.txt
+(venv) ~/skhub$ pip install -r requirements.txt
 ```
 
 ### Run tests
@@ -41,7 +41,7 @@ The `matrix` module contains a factory function for generating matrices of a giv
 
 ```bash
 >>> from skhub.matrix import matrix_factory, N_of_x_plus_N_of_y
->>> from skhub.numbers import prime
+>>> from skhub.numbers import fibonacci, prime
 >>> m = matrix_factory(10, 20, prime, N_of_x_plus_N_of_y)
 >>> m.print(pretty=True)
   4   5   7   9  13  15  19  21  25  31  33  39  43  45  49  55  61  63  69  73
@@ -73,7 +73,7 @@ The `matrix` module contains a factory function for generating matrices of a giv
 
 ### Custom formulas
 
-Implementing a custom formula is as simple as subclassing Formula class and implementing the logic for building the correct sequence of numbers in its constructor, and the getter for an element:
+Implementing a custom formula is as simple as subclassing the Formula class and implementing the logic for building the correct sequence of numbers in its constructor, and the getter for an element:
 
 ```bash
 >>> from skhub.numbers import *
@@ -81,7 +81,7 @@ Implementing a custom formula is as simple as subclassing Formula class and impl
 >>> class MyFormula(Formula):
 ...     def __init__(self, m, n, number_generator):
 ...         super().__init__(m, n, number_generator)
-...         self.numbers = list(islice(number_generator(), 0, m*n+3))
+...         self.numbers = list(islice(number_generator(), 0, m*n+30))
 ...     def get(self, x, y):
 ...         super().get(x, y)
 ...         return self.numbers[x*y+30]
